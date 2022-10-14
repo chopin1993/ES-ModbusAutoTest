@@ -1,0 +1,81 @@
+{
+  "profile": {
+    "version": "1.0",
+    "productKey": "modbusGatew",
+    "name":"本设备modbus service",
+    "snType":[
+	"31731010108", //p-HG-T-A
+	"32031010005"  //ESHG-S-B
+    ]
+  },
+  "mb_map":{
+    "nb_bits":0,
+    "start_bits":0,
+
+    "nb_input_bits":494,
+    "start_input_bits":1,
+
+    "nb_registers":0,
+    "start_registers":0,
+
+    "nb_input_registers":48,
+    "start_input_registers":1
+  },
+  "nodes": [
+    {
+      "identifier": "modbusSoftwareVer",
+      "name": "modbus服务软件版本",
+      "accessMode": "r",
+      "required": false,
+      "dataType": {
+        "type": "text",
+        "specs": {
+          "length": 48
+        }
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 24,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "string"
+      },
+      "writeOnly": 0,
+      "registerAddress": 30001,
+      "scaling": 1,
+      "writeFunctionCode": 0,
+      "operateType": "inputRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "softwareVersion",
+      "name": "网关软件版本",
+      "accessMode": "r",
+      "desc": "metadata",
+      "required": false,
+      "dataType": {
+        "type": "text",
+        "specs": {
+          "length": 48
+        }
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 24,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "string"
+      },
+      "writeOnly": 0,
+      "registerAddress": 30025,
+      "scaling": 1,
+      "writeFunctionCode": 0,
+      "operateType": "inputRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    }
+  ]
+}

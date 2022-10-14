@@ -1,0 +1,106 @@
+{
+  "profile": {
+    "version": "1.0",
+    "productKey": "switch2chns",
+    "name":"2个通道的开关，包括2按键触摸开关,开关控制模块等",
+    "snType":[
+	"31712020205", //P-TK-02-2S5A-S, 睿智系列开关
+	"31712020204"  //P-TK-02-2S5A-M, 触摸开关
+    ]
+  },
+  "mb_map":{
+    "nb_bits":2,
+    "start_bits":1,
+
+    "nb_input_bits":0,
+    "start_input_bits":0,
+
+    "nb_registers":0,
+    "start_registers":0,
+
+    "nb_input_registers":1,
+    "start_input_registers":1
+  },
+  "nodes": [
+    {
+      "identifier": "switch_ch1",
+      "name": "第1通道开关",
+      "accessMode": "rw",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "bool"
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "bool"
+      },
+      "writeOnly": 0,
+      "registerAddress": 1,
+      "scaling": 1,
+      "writeFunctionCode": 5,
+      "operateType": "coilStatus",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "switch_ch2",
+      "name": "第2通道开关",
+      "accessMode": "rw",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "bool"
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "bool"
+      },
+      "writeOnly": 0,
+      "registerAddress": 2,
+      "scaling": 1,
+      "writeFunctionCode": 5,
+      "operateType": "coilStatus",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "channel",
+      "name": "按键通道按下事件的通道号,0表示无按键事件,signal类型，读取后清零",
+      "accessMode": "r",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "double",
+        "specs": {
+          "min": 0,
+          "max": 2,
+          "step": 1
+        }
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "signal"
+      },
+      "writeOnly": 0,
+      "registerAddress": 30001,
+      "scaling": 1,
+      "writeFunctionCode": 0,
+      "operateType": "inputRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    }
+  ]
+}

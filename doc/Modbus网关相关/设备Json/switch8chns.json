@@ -1,0 +1,226 @@
+{
+  "profile": {
+    "version": "1.0",
+    "productKey": "switch8chns",
+    "name":"8个通道的开关，包8路开关执行器(主) 8路开关执行器(从)",
+    "snType":[
+	"31711070007",//ESACT-8S16A-M
+	"31711070008" //ESACT-8S16A-S
+    ]
+  },
+  "mb_map":{
+    "nb_bits":8,
+    "start_bits":1,
+
+    "nb_input_bits":0,
+    "start_input_bits":0,
+
+    "nb_registers":0,
+    "start_registers":0,
+
+    "nb_input_registers":0,
+    "start_input_registers":0
+  },
+  "nodes": [
+    {
+      "identifier": "switch_ch1",
+      "name": "第1通道开关",
+      "accessMode": "rw",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "bool"
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "bool"
+      },
+      "writeOnly": 0,
+      "registerAddress": 1,
+      "scaling": 1,
+      "writeFunctionCode": 5,
+      "operateType": "coilStatus",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "switch_ch2",
+      "name": "第2通道开关",
+      "accessMode": "rw",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "bool"
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "bool"
+      },
+      "writeOnly": 0,
+      "registerAddress": 2,
+      "scaling": 1,
+      "writeFunctionCode": 5,
+      "operateType": "coilStatus",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "switch_ch3",
+      "name": "第3通道开关",
+      "accessMode": "rw",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "bool"
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "bool"
+      },
+      "writeOnly": 0,
+      "registerAddress": 3,
+      "scaling": 1,
+      "writeFunctionCode": 5,
+      "operateType": "coilStatus",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "switch_ch4",
+      "name": "第4通道开关",
+      "accessMode": "rw",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "bool"
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "bool"
+      },
+      "writeOnly": 0,
+      "registerAddress": 4,
+      "scaling": 1,
+      "writeFunctionCode": 5,
+      "operateType": "coilStatus",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "switch_ch5",
+      "name": "第5通道开关",
+      "accessMode": "rw",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "bool"
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "bool"
+      },
+      "writeOnly": 0,
+      "registerAddress": 5,
+      "scaling": 1,
+      "writeFunctionCode": 5,
+      "operateType": "coilStatus",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "switch_ch6",
+      "name": "第6通道开关",
+      "accessMode": "rw",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "bool"
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "bool"
+      },
+      "writeOnly": 0,
+      "registerAddress": 6,
+      "scaling": 1,
+      "writeFunctionCode": 5,
+      "operateType": "coilStatus",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "switch_ch7",
+      "name": "第7通道开关",
+      "accessMode": "rw",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "bool"
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "bool"
+      },
+      "writeOnly": 0,
+      "registerAddress": 7,
+      "scaling": 1,
+      "writeFunctionCode": 5,
+      "operateType": "coilStatus",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "switch_ch8",
+      "name": "第8通道开关",
+      "accessMode": "rw",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "bool"
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "bool"
+      },
+      "writeOnly": 0,
+      "registerAddress": 8,
+      "scaling": 1,
+      "writeFunctionCode": 5,
+      "operateType": "coilStatus",
+      "pollingTime": 1000,
+      "trigger": 1
+    }
+  ]
+}

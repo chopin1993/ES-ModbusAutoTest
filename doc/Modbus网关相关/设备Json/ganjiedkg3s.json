@@ -1,0 +1,374 @@
+{
+  "profile": {
+    "version": "1.0",
+    "productKey": "ganjiedkg3s",
+    "name":"3路干接点开关",
+    "snType":[
+	"31711010106",//P-ACT-3S5A-DCS
+	"32011010108" //ESACT-3S5A-DCS
+    ]
+  },
+  "mb_map":{
+    "nb_bits":3,
+    "start_bits":1,
+
+    "nb_input_bits":0,
+    "start_input_bits":0,
+
+    "nb_registers":1,
+    "start_registers":1,
+
+    "nb_input_registers":8,
+    "start_input_registers":1
+  },
+  "nodes": [
+    {
+      "identifier": "switch_ch1",
+      "name": "第1通道开关",
+      "accessMode": "rw",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "bool"
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "bool"
+      },
+      "writeOnly": 0,
+      "registerAddress": 1,
+      "scaling": 1,
+      "writeFunctionCode": 5,
+      "operateType": "coilStatus",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "switch_ch2",
+      "name": "第2通道开关",
+      "accessMode": "rw",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "bool"
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "bool"
+      },
+      "writeOnly": 0,
+      "registerAddress": 2,
+      "scaling": 1,
+      "writeFunctionCode": 5,
+      "operateType": "coilStatus",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "switch_ch3",
+      "name": "第3通道开关",
+      "accessMode": "rw",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "bool"
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "bool"
+      },
+      "writeOnly": 0,
+      "registerAddress": 3,
+      "scaling": 1,
+      "writeFunctionCode": 5,
+      "operateType": "coilStatus",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "lock_panel",
+      "name": "面板锁定",
+      "accessMode": "rw",
+      "desc": "configuration",
+      "required": false,
+      "dataType": {
+        "type": "bool"
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "bool"
+      },
+      "writeOnly": 0,
+      "registerAddress": 40001,
+      "scaling": 1,
+      "writeFunctionCode": 6,
+      "operateType": "holdingRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "channel_id/1/channel_signal_type",
+      "name": "通道1信号类型",
+      "accessMode": "r",
+      "collection": true,
+      "desc": "alarm",
+      "required": false,
+      "dataType": {
+        "type": "double",
+        "specs": {
+          "min": 0,
+          "max": 4,
+          "step": 1
+        }
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "uint16"
+      },
+      "writeOnly": 0,
+      "registerAddress": 30001,
+      "scaling": 1,
+      "writeFunctionCode": 0,
+      "operateType": "inputRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "channel_id/1/channel_state",
+      "name": "通道1状态",
+      "accessMode": "r",
+      "collection": true,
+      "desc": "alarm",
+      "required": false,
+      "dataType": {
+        "type": "double",
+        "specs": {
+          "min": 0,
+          "max": 3,
+          "step": 1
+        }
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "uint16"
+      },
+      "writeOnly": 0,
+      "registerAddress": 30002,
+      "scaling": 1,
+      "writeFunctionCode": 0,
+      "operateType": "inputRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "channel_id/2/channel_signal_type",
+      "name": "通道2信号类型",
+      "accessMode": "r",
+      "collection": true,
+      "desc": "alarm",
+      "required": false,
+      "dataType": {
+        "type": "double",
+        "specs": {
+          "min": 0,
+          "max": 4,
+          "step": 1
+        }
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "uint16"
+      },
+      "writeOnly": 0,
+      "registerAddress": 30003,
+      "scaling": 1,
+      "writeFunctionCode": 0,
+      "operateType": "inputRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "channel_id/2/channel_state",
+      "name": "通道2状态",
+      "accessMode": "r",
+      "collection": true,
+      "desc": "alarm",
+      "required": false,
+      "dataType": {
+        "type": "double",
+        "specs": {
+          "min": 0,
+          "max": 3,
+          "step": 1
+        }
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "uint16"
+      },
+      "writeOnly": 0,
+      "registerAddress": 30004,
+      "scaling": 1,
+      "writeFunctionCode": 0,
+      "operateType": "inputRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "channel_id/3/channel_signal_type",
+      "name": "通道3信号类型",
+      "accessMode": "r",
+      "collection": true,
+      "desc": "alarm",
+      "required": false,
+      "dataType": {
+        "type": "double",
+        "specs": {
+          "min": 0,
+          "max": 4,
+          "step": 1
+        }
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "uint16"
+      },
+      "writeOnly": 0,
+      "registerAddress": 30005,
+      "scaling": 1,
+      "writeFunctionCode": 0,
+      "operateType": "inputRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "channel_id/3/channel_state",
+      "name": "通道3状态",
+      "accessMode": "r",
+      "collection": true,
+      "desc": "alarm",
+      "required": false,
+      "dataType": {
+        "type": "double",
+        "specs": {
+          "min": 0,
+          "max": 3,
+          "step": 1
+        }
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "uint16"
+      },
+      "writeOnly": 0,
+      "registerAddress": 30006,
+      "scaling": 1,
+      "writeFunctionCode": 0,
+      "operateType": "inputRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "channel_id/4/channel_signal_type",
+      "name": "通道4信号类型",
+      "accessMode": "r",
+      "collection": true,
+      "desc": "alarm",
+      "required": false,
+      "dataType": {
+        "type": "double",
+        "specs": {
+          "min": 0,
+          "max": 4,
+          "step": 1
+        }
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "uint16"
+      },
+      "writeOnly": 0,
+      "registerAddress": 30007,
+      "scaling": 1,
+      "writeFunctionCode": 0,
+      "operateType": "inputRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "channel_id/4/channel_state",
+      "name": "通道4状态",
+      "accessMode": "r",
+      "collection": true,
+      "desc": "alarm",
+      "required": false,
+      "dataType": {
+        "type": "double",
+        "specs": {
+          "min": 0,
+          "max": 3,
+          "step": 1
+        }
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "uint16"
+      },
+      "writeOnly": 0,
+      "registerAddress": 30008,
+      "scaling": 1,
+      "writeFunctionCode": 0,
+      "operateType": "inputRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "profile": {
+    "version": "1.0",
+    "productKey": "renthongwai",
+    "name":"人体红外感应器",
+    "snType":[
+	"31721010013" //P-SN-IR-IM-A
+    ]
+  },
+  "mb_map":{
+    "nb_bits":0,
+    "start_bits":0,
+
+    "nb_input_bits":0,
+    "start_input_bits":0,
+
+    "nb_registers":0,
+    "start_registers":0,
+
+    "nb_input_registers":2,
+    "start_input_registers":1
+  },
+  "nodes": [
+    {
+      "identifier": "people",
+      "name": "有人无人状态",
+      "accessMode": "r",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "bool"
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "bool"
+      },
+      "writeOnly": 0,
+      "registerAddress": 30001,
+      "scaling": 1,
+      "writeFunctionCode": 0,
+      "operateType": "inputRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "illumination",
+      "name": "照度",
+      "accessMode": "r",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "double",
+        "specs": {
+          "min": 0,
+          "max": 9999,
+          "step": 1,
+          "unit": "Lux",
+          "unitName": "流明"
+	}
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "uint16"
+      },
+      "writeOnly": 0,
+      "registerAddress": 30002,
+      "scaling": 1,
+      "writeFunctionCode": 0,
+      "operateType": "inputRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    }
+  ]
+}

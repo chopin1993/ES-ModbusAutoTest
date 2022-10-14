@@ -1,0 +1,215 @@
+{
+  "profile": {
+    "version": "1.0",
+    "productKey": "dayaoswitch",
+    "name":"大功率计量遥控开关",
+    "snType":[
+	"31741020003",//P-EM-1S32A-K-D35-63
+	"32041020003",//ESEM-1S32A-K-D35-63
+	"31741020006",//P-EM-1S63A-K-D35
+	"32041020006",//ESEM-1S63A-K-D35
+	"31741020008",//P-EM-1S32A-K-D35-A-63
+	"32041020008" //ESEM-1S32A-K-D35-A-63
+    ]
+  },
+  "mb_map":{
+    "nb_bits":1,
+    "start_bits":1,
+
+    "nb_input_bits":0,
+    "start_input_bits":0,
+
+    "nb_registers":2,
+    "start_registers":1,
+
+    "nb_input_registers":7,
+    "start_input_registers":1
+  },
+  "nodes": [
+    {
+      "identifier": "switch_ch1",
+      "name": "开关",
+      "accessMode": "rw",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "bool"
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "bool"
+      },
+      "writeOnly": 0,
+      "registerAddress": 1,
+      "scaling": 1,
+      "writeFunctionCode": 5,
+      "operateType": "coilStatus",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "voltage",
+      "name": "电压",
+      "accessMode": "r",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "double",
+        "specs": {
+          "min": 0,
+          "max": 9999,
+          "step": 1,
+          "unit": "V",
+          "unitName": "伏特"
+        }
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "uint16"
+      },
+      "writeOnly": 0,
+      "registerAddress": 30001,
+      "scaling": 10,
+      "writeFunctionCode": 0,
+      "operateType": "inputRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "current",
+      "name": "电流",
+      "accessMode": "r",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "double",
+        "specs": {
+          "min": 0,
+          "max": 999999,
+          "step": 1,
+          "unit": "A",
+          "unitName": "安培"
+        }
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 2,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "uint32"
+      },
+      "writeOnly": 0,
+      "registerAddress": 30002,
+      "scaling": 1000,
+      "writeFunctionCode": 0,
+      "operateType": "inputRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "power",
+      "name": "功率",
+      "accessMode": "r",
+      "required": false,
+      "desc": "function",
+      "dataType": {
+        "type": "double",
+        "specs": {
+          "min": 0,
+          "max": 999999,
+          "step": 1,
+          "unit": "KW",
+          "unitName": "千瓦特"
+        }
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 2,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "uint32"
+      },
+      "writeOnly": 0,
+      "registerAddress": 30004,
+      "scaling": 10000,
+      "writeFunctionCode": 0,
+      "operateType": "inputRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "electricity",
+      "name": "用电量",
+      "accessMode": "r",
+      "required": false,
+      "desc": "function",
+      "dataType": {
+        "type": "double",
+        "specs": {
+          "min": 0,
+          "max": 999999,
+          "step": 1,
+          "unit": "KWh",
+          "unitName": "千瓦时"
+        }
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 2,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "uint32"
+      },
+      "writeOnly": 0,
+      "registerAddress": 30006,
+      "scaling": 100,
+      "writeFunctionCode": 0,
+      "operateType": "inputRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "over_power",
+      "name": "功率过载限定值",
+      "accessMode": "rw",
+      "required": false,
+      "desc": "configuration",
+      "dataType": {
+        "type": "double",
+        "specs": {
+          "min": 0,
+          "max": 13860,
+          "step": 1,
+          "unit": "KW",
+          "unitName": "千瓦特"
+        }
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 2,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "uint32"
+      },
+      "writeOnly": 0,
+      "registerAddress": 40001,
+      "scaling": 1000,
+      "writeFunctionCode": 16,
+      "operateType": "holdingRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    }
+  ]
+}

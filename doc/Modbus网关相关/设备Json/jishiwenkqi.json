@@ -1,0 +1,875 @@
+{
+  "profile": {
+    "version": "1.0",
+    "productKey": "jishiwenkqi",
+    "name":"联网计时型温控器",
+    "snType":[
+	"31712010032" //ESTK-05-FC-CT-A
+    ]
+  },
+  "mb_map":{
+    "nb_bits":0,
+    "start_bits":0,
+
+    "nb_input_bits":0,
+    "start_input_bits":0,
+
+    "nb_registers":33,
+    "start_registers":1,
+
+    "nb_input_registers":9,
+    "start_input_registers":1
+  },
+  "nodes": [
+    {
+      "identifier": "model",
+      "name": "工作模式",
+      "accessMode": "rw",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "enum",
+        "specs": [
+          "cold",
+          "heat",
+	  "fan"	
+        ]
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0,
+          "min": 0,
+          "max": 2,
+          "step": 1
+        },
+        "type": "enum"
+      },
+      "writeOnly": 1,
+      "registerAddress": 40001,
+      "scaling": 1,
+      "writeFunctionCode": 6,
+      "operateType": "holdingRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "power_on",
+      "name": "开关机",
+      "accessMode": "rw",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "bool"
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "bool"
+      },
+      "writeOnly": 0,
+      "registerAddress": 40002,
+      "scaling": 1,
+      "writeFunctionCode": 6,
+      "operateType": "holdingRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "temperature",
+      "name": "设定温度",
+      "accessMode": "rw",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "double",
+        "specs": {
+          "min": 5,
+          "max": 35,
+          "step": 1,
+          "unit": "℃"
+        }
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "uint16"
+      },
+      "writeOnly": 0,
+      "registerAddress": 40003,
+      "scaling": 1,
+      "writeFunctionCode": 6,
+      "operateType": "holdingRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "rev_speed",
+      "name": "风速",
+      "accessMode": "rw",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "enum",
+        "specs": [
+          "low",
+          "middle",
+	  "high",
+	  "auto"	
+        ]
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0,
+          "min": 0,
+          "max": 3,
+          "step": 1
+        },
+        "type": "enum"
+      },
+      "writeOnly": 1,
+      "registerAddress": 40004,
+      "scaling": 1,
+      "writeFunctionCode": 6,
+      "operateType": "holdingRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "low_temp_enable",
+      "name": "低温保护",
+      "accessMode": "rw",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "bool"
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "bool"
+      },
+      "writeOnly": 0,
+      "registerAddress": 40005,
+      "scaling": 1,
+      "writeFunctionCode": 6,
+      "operateType": "holdingRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "lock_panel",
+      "name": "面板锁定",
+      "accessMode": "rw",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "bool"
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "bool"
+      },
+      "writeOnly": 0,
+      "registerAddress": 40006,
+      "scaling": 1,
+      "writeFunctionCode": 6,
+      "operateType": "holdingRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "key_lock",
+      "name": "按键锁定",
+      "accessMode": "rw",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "double",
+        "specs": {
+          "min": 0,
+          "max": 2,
+          "step": 1
+        }
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "uint16"
+      },
+      "writeOnly": 0,
+      "registerAddress": 40007,
+      "scaling": 1,
+      "writeFunctionCode": 6,
+      "operateType": "holdingRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "date",
+      "name": "年月日, 22-04-15",
+      "accessMode": "rw",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "text",
+        "specs": {
+          "length": 8
+        }
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 2,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "date"
+      },
+      "writeOnly": 0,
+      "registerAddress": 40008,
+      "scaling": 1,
+      "writeFunctionCode": 6,
+      "operateType": "holdingRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "time",
+      "name": "时分秒,10:23:40",
+      "accessMode": "rw",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "text",
+        "specs": {
+          "length": 8
+        }
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 2,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "time"
+      },
+      "writeOnly": 0,
+      "registerAddress": 40010,
+      "scaling": 1,
+      "writeFunctionCode": 6,
+      "operateType": "holdingRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "power_on_times",
+      "name": "设备开机的次数",
+      "accessMode": "rw",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "double",
+        "specs": {
+          "min": 0,
+          "max": 4294967295,
+          "step": 1
+        }
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 2,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "uint32"
+      },
+      "writeOnly": 1,
+      "registerAddress": 40012,
+      "scaling": 1,
+      "writeFunctionCode": 6,
+      "operateType": "holdingRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "valve_opening_times",
+      "name": "阀门开的次数",
+      "accessMode": "rw",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "double",
+        "specs": {
+          "min": 0,
+          "max": 4294967295,
+          "step": 1
+        }
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 2,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "uint32"
+      },
+      "writeOnly": 1,
+      "registerAddress": 40014,
+      "scaling": 1,
+      "writeFunctionCode": 6,
+      "operateType": "holdingRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "run_time",
+      "name": "设备开机运行时间",
+      "accessMode": "rw",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "double",
+        "specs": {
+          "min": 0,
+          "max": 4294967295,
+          "step": 1,
+          "unit": "S",
+          "unitName": "秒"
+        }
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 2,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "uint32"
+      },
+      "writeOnly": 1,
+      "registerAddress": 40016,
+      "scaling": 1,
+      "writeFunctionCode": 6,
+      "operateType": "holdingRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "valve_opening_run_time",
+      "name": "阀门开运行时间",
+      "accessMode": "rw",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "double",
+        "specs": {
+          "min": 0,
+          "max": 4294967295,
+          "step": 1,
+          "unit": "S",
+          "unitName": "秒"
+        }
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 2,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "uint32"
+      },
+      "writeOnly": 1,
+      "registerAddress": 40018,
+      "scaling": 1,
+      "writeFunctionCode": 6,
+      "operateType": "holdingRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "high_speed_run_time",
+      "name": "高风速运行时间",
+      "accessMode": "rw",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "double",
+        "specs": {
+          "min": 0,
+          "max": 4294967295,
+          "step": 1,
+          "unit": "S",
+          "unitName": "秒"
+        }
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 2,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "uint32"
+      },
+      "writeOnly": 1,
+      "registerAddress": 40020,
+      "scaling": 1,
+      "writeFunctionCode": 6,
+      "operateType": "holdingRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "middle_speed_run_time",
+      "name": "中风速运行时间",
+      "accessMode": "rw",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "double",
+        "specs": {
+          "min": 0,
+          "max": 4294967295,
+          "step": 1,
+          "unit": "S",
+          "unitName": "秒"
+        }
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 2,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "uint32"
+      },
+      "writeOnly": 1,
+      "registerAddress": 40022,
+      "scaling": 1,
+      "writeFunctionCode": 6,
+      "operateType": "holdingRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "low_speed_run_time",
+      "name": "低风速运行时间",
+      "accessMode": "rw",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "double",
+        "specs": {
+          "min": 0,
+          "max": 4294967295,
+          "step": 1,
+          "unit": "S",
+          "unitName": "秒"
+        }
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 2,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "uint32"
+      },
+      "writeOnly": 1,
+      "registerAddress": 40024,
+      "scaling": 1,
+      "writeFunctionCode": 6,
+      "operateType": "holdingRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "high_speed_run_time_minute",
+      "name": "高风速运行时间/min",
+      "accessMode": "rw",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "double",
+        "specs": {
+          "min": 0,
+          "max": 4294967295,
+          "step": 1,
+          "unit": "min",
+          "unitName": "分钟"
+        }
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 2,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "uint32"
+      },
+      "writeOnly": 1,
+      "registerAddress": 40026,
+      "scaling": 1,
+      "writeFunctionCode": 6,
+      "operateType": "holdingRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "middle_speed_run_time_minute",
+      "name": "中风速运行时间/min",
+      "accessMode": "rw",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "double",
+        "specs": {
+          "min": 0,
+          "max": 4294967295,
+          "step": 1,
+          "unit": "min",
+          "unitName": "分钟"
+        }
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 2,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "uint32"
+      },
+      "writeOnly": 1,
+      "registerAddress": 40028,
+      "scaling": 1,
+      "writeFunctionCode": 6,
+      "operateType": "holdingRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "low_speed_run_time_minute",
+      "name": "低风速运行时间/min",
+      "accessMode": "rw",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "double",
+        "specs": {
+          "min": 0,
+          "max": 4294967295,
+          "step": 1,
+          "unit": "min",
+          "unitName": "分钟"
+        }
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 2,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "uint32"
+      },
+      "writeOnly": 1,
+      "registerAddress": 40030,
+      "scaling": 1,
+      "writeFunctionCode": 6,
+      "operateType": "holdingRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "equivalent_time_minute",
+      "name": "当量时间/min",
+      "accessMode": "rw",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "double",
+        "specs": {
+          "min": 0,
+          "max": 4294967295,
+          "step": 1,
+          "unit": "min",
+          "unitName": "分钟"
+        }
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 2,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "uint32"
+      },
+      "writeOnly": 1,
+      "registerAddress": 40032,
+      "scaling": 1,
+      "writeFunctionCode": 6,
+      "operateType": "holdingRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "current_temp",
+      "name": "当前温度",
+      "accessMode": "r",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "double",
+        "specs": {
+          "min": -7999,
+          "max": 7999,
+          "step": 1,
+          "unit": "℃",
+          "unitName": "摄氏度"
+        }
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "int16"
+      },
+      "writeOnly": 0,
+      "registerAddress": 30001,
+      "scaling": 10,
+      "writeFunctionCode": 0,
+      "operateType": "inputRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "humidness",
+      "name": "当前湿度",
+      "accessMode": "r",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "double",
+        "specs": {
+          "min": 0,
+          "max": 1000,
+          "step": 1,
+          "unit": "％"
+        }
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "uint16"
+      },
+      "writeOnly": 0,
+      "registerAddress": 30002,
+      "scaling": 10,
+      "writeFunctionCode": 0,
+      "operateType": "inputRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "low_temperature_protection",
+      "name": "低温保护",
+      "accessMode": "r",
+      "desc": "alarm",
+      "required": false,
+      "dataType": {
+        "type": "bool"
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "bool"
+      },
+      "writeOnly": 0,
+      "registerAddress": 30003,
+      "scaling": 1,
+      "writeFunctionCode": 0,
+      "operateType": "inputRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "sensor_fault",
+      "name": "传感器故障",
+      "accessMode": "r",
+      "desc": "alarm",
+      "required": false,
+      "dataType": {
+        "type": "bool"
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "bool"
+      },
+      "writeOnly": 0,
+      "registerAddress": 30004,
+      "scaling": 1,
+      "writeFunctionCode": 0,
+      "operateType": "inputRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "coil_sensor_open_circuit",
+      "name": "盘管传感器开路报警",
+      "accessMode": "r",
+      "desc": "alarm",
+      "required": false,
+      "dataType": {
+        "type": "bool"
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "bool"
+      },
+      "writeOnly": 0,
+      "registerAddress": 30005,
+      "scaling": 1,
+      "writeFunctionCode": 0,
+      "operateType": "inputRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "coil_sensor_short_circuit",
+      "name": "盘管传感器短路报警",
+      "accessMode": "r",
+      "desc": "alarm",
+      "required": false,
+      "dataType": {
+        "type": "bool"
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "bool"
+      },
+      "writeOnly": 0,
+      "registerAddress": 30006,
+      "scaling": 1,
+      "writeFunctionCode": 0,
+      "operateType": "inputRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "low_temperature",
+      "name": "低温报警",
+      "accessMode": "r",
+      "desc": "alarm",
+      "required": false,
+      "dataType": {
+        "type": "bool"
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "bool"
+      },
+      "writeOnly": 0,
+      "registerAddress": 30007,
+      "scaling": 1,
+      "writeFunctionCode": 0,
+      "operateType": "inputRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "high_temperature",
+      "name": "高温报警",
+      "accessMode": "r",
+      "desc": "alarm",
+      "required": false,
+      "dataType": {
+        "type": "bool"
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "bool"
+      },
+      "writeOnly": 0,
+      "registerAddress": 30008,
+      "scaling": 1,
+      "writeFunctionCode": 0,
+      "operateType": "inputRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "charging_alarm",
+      "name": "计费告警",
+      "accessMode": "r",
+      "desc": "alarm",
+      "required": false,
+      "dataType": {
+        "type": "double",
+        "specs": {
+          "min": 0,
+          "max": 2,
+          "step": 1
+        }
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "uint16"
+      },
+      "writeOnly": 0,
+      "registerAddress": 30009,
+      "scaling": 1,
+      "writeFunctionCode": 0,
+      "operateType": "inputRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    }
+  ]
+}

@@ -1,0 +1,199 @@
+{
+  "profile": {
+    "version": "1.0",
+    "productKey": "sewenkzq2ch",
+    "name":"色温控制器",
+    "snType":[
+	"31711020010" //ESACT-2CCT16A-D35
+    ]
+  },
+  "mb_map":{
+    "nb_bits":0,
+    "start_bits":0,
+
+    "nb_input_bits":0,
+    "start_input_bits":0,
+
+    "nb_registers":6,
+    "start_registers":1,
+
+    "nb_input_registers":0,
+    "start_input_registers":0
+  },
+  "nodes": [
+    {
+      "identifier": "switch_ch1",
+      "name": "第1通道开关",
+      "accessMode": "rw",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "bool"
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "bool"
+      },
+      "writeOnly": 0,
+      "registerAddress": 40001,
+      "scaling": 1,
+      "writeFunctionCode": 6,
+      "operateType": "holdingRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "brightness_ch1",
+      "name": "通道1亮度",
+      "accessMode": "rw",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "double",
+        "specs": {
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%"
+        }
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "uint16"
+      },
+      "writeOnly": 0,
+      "registerAddress": 40002,
+      "scaling": 1,
+      "writeFunctionCode": 6,
+      "operateType": "holdingRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "color_temperature_ch1",
+      "name": "通道1色温",
+      "accessMode": "rw",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "double",
+        "specs": {
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%"
+        }
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "uint16"
+      },
+      "writeOnly": 0,
+      "registerAddress": 40003,
+      "scaling": 1,
+      "writeFunctionCode": 6,
+      "operateType": "holdingRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "switch_ch2",
+      "name": "第2通道开关",
+      "accessMode": "rw",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "bool"
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "bool"
+      },
+      "writeOnly": 0,
+      "registerAddress": 40004,
+      "scaling": 1,
+      "writeFunctionCode": 6,
+      "operateType": "holdingRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "brightness_ch2",
+      "name": "通道2亮度",
+      "accessMode": "rw",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "double",
+        "specs": {
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%"
+        }
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "uint16"
+      },
+      "writeOnly": 0,
+      "registerAddress": 40005,
+      "scaling": 1,
+      "writeFunctionCode": 6,
+      "operateType": "holdingRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "color_temperature_ch2",
+      "name": "通道2色温",
+      "accessMode": "rw",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "double",
+        "specs": {
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%"
+        }
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "uint16"
+      },
+      "writeOnly": 0,
+      "registerAddress": 40006,
+      "scaling": 1,
+      "writeFunctionCode": 6,
+      "operateType": "holdingRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    }
+  ]
+}

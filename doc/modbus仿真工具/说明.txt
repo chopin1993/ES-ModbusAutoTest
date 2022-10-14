@@ -1,0 +1,8 @@
+最好用的modbus工具，含主控端和被控端。
+
+速度快，稳定。灵活，还支持modbus tcp/ip。
+
+现场调试modbus必备工具
+
+qq:564734347
+http://gelic.myfirstblog.net

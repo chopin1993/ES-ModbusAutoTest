@@ -1,0 +1,125 @@
+{
+  "profile": {
+    "version": "1.0",
+    "productKey": "chuanglianO",
+    "name":"单轨窗帘控制基本功能,支持开度控制",
+    "snType":[
+	"31711040006",//P-ACT-CC1-AC-A-63
+	"32011040006",//ESACT-CC1-AC-A-63
+	"32011040013",//ESACT-CC1-AC-C
+	"32011120101",//ESACT-CM-1/12-PL-C21 开合帘电机（奥科）
+	"31711120102",//P-ACT-TM-10/17-PLC-C11 卷帘电机(杜亚)
+	"32011120103" //ESCV-PL-CC  窗帘电机载波模块
+    ]
+  },
+  "mb_map":{
+    "nb_bits":0,
+    "start_bits":0,
+
+    "nb_input_bits":0,
+    "start_input_bits":0,
+
+    "nb_registers":2,
+    "start_registers":1,
+
+    "nb_input_registers":1,
+    "start_input_registers":1
+  },
+  "nodes": [
+    {
+      "identifier": "curtain_operation",
+      "name": "通道1控制",
+      "accessMode": "w",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "enum",
+        "specs": [
+          "stop",
+          "on",
+	  "off"
+        ]
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0,
+          "min": 1,
+          "max": 3,
+          "step": 1
+        },
+        "type": "enum"
+      },
+      "writeOnly": 1,
+      "registerAddress": 40001,
+      "scaling": 1,
+      "writeFunctionCode": 6,
+      "operateType": "holdingRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "curtain_percent",
+      "name": "最终开合度百分比",
+      "accessMode": "w",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "double",
+        "specs": {
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%"
+        }
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "uint16"
+      },
+      "writeOnly": 1,
+      "registerAddress": 40002,
+      "scaling": 1,
+      "writeFunctionCode": 6,
+      "operateType": "holdingRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "current_percent",
+      "name": "当前开合度百分比",
+      "accessMode": "r",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "double",
+        "specs": {
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%"
+        }
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "uint16"
+      },
+      "writeOnly": 0,
+      "registerAddress": 30001,
+      "scaling": 1,
+      "writeFunctionCode": 0,
+      "operateType": "inputRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    }
+  ]
+}

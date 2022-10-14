@@ -1,0 +1,136 @@
+{
+  "profile": {
+    "version": "1.0",
+    "productKey": "4inCtpPanel",
+    "name":"4寸智能终端",
+    "snType":[
+	"31713010201"//P-DT-L-CTP4
+    ]
+  },
+  "mb_map":{
+    "nb_bits":1,
+    "start_bits":1,
+
+    "nb_input_bits":0,
+    "start_input_bits":0,
+
+    "nb_registers":4,
+    "start_registers":1,
+
+    "nb_input_registers":1,
+    "start_input_registers":1
+  },
+  "nodes": [
+    {
+      "identifier": "switch_ch1",
+      "name": "第1通道开关",
+      "accessMode": "rw",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "bool"
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "bool"
+      },
+      "writeOnly": 0,
+      "registerAddress": 1,
+      "scaling": 1,
+      "writeFunctionCode": 5,
+      "operateType": "coilStatus",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "date",
+      "name": "年月日, 22-04-15",
+      "accessMode": "rw",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "text",
+        "specs": {
+          "length": 8
+        }
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 2,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "date"
+      },
+      "writeOnly": 0,
+      "registerAddress": 40001,
+      "scaling": 1,
+      "writeFunctionCode": 6,
+      "operateType": "holdingRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "time",
+      "name": "时分秒,10:23:40",
+      "accessMode": "rw",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "text",
+        "specs": {
+          "length": 8
+        }
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 2,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "time"
+      },
+      "writeOnly": 0,
+      "registerAddress": 40003,
+      "scaling": 1,
+      "writeFunctionCode": 6,
+      "operateType": "holdingRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    },
+    {
+      "identifier": "button_id",
+      "name": "按键通道按下事件的通道号",
+      "accessMode": "r",
+      "desc": "function",
+      "required": false,
+      "dataType": {
+        "type": "double",
+        "specs": {
+          "min": 0,
+          "max": 54,
+          "step": 1
+        }
+      },
+      "originalDataType": {
+        "specs": {
+          "registerCount": 1,
+          "reverseRegister": 0,
+          "swap16": 0
+        },
+        "type": "signal"
+      },
+      "writeOnly": 0,
+      "registerAddress": 30001,
+      "scaling": 1,
+      "writeFunctionCode": 0,
+      "operateType": "inputRegister",
+      "pollingTime": 1000,
+      "trigger": 1
+    }
+  ]
+}
